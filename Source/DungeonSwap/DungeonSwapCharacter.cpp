@@ -22,9 +22,7 @@ ADungeonSwapCharacter::ADungeonSwapCharacter()
 	bUseControllerRotationRoll = false;
 
 	// Setup Mouse Over Events
-	bEnableMouseOverEvents = true;
 	GetMesh()->SetGenerateOverlapEvents(true);
-	GetMesh()->bEnableMouseOverEvents = true;
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
 
 	// Configure character movement
@@ -53,13 +51,15 @@ ADungeonSwapCharacter::ADungeonSwapCharacter()
 
 void ADungeonSwapCharacter::Tick(float DeltaSeconds)
 {
-    Super::Tick(DeltaSeconds);
+	Super::Tick(DeltaSeconds);
 }
 
-void ADungeonSwapCharacter::NotifyActorBeginCursorOver() {
+void ADungeonSwapCharacter::NotifyActorBeginCursorOver()
+{
 	UE_LOG(LogTemp, Warning, TEXT("Mouse Over Actor"));
 }
 
-void ADungeonSwapCharacter::NotifyActorEndCursorOver() {
+void ADungeonSwapCharacter::NotifyActorEndCursorOver()
+{
 	UE_LOG(LogTemp, Warning, TEXT("Mouse Off Actor"));
 }
